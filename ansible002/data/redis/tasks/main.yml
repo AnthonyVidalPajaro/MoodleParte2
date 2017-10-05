@@ -1,0 +1,49 @@
+  ---
+- name: 1. Instalar Apache
+  apt: name=apache2 state=present
+
+- name: 2. Instalar PHP
+  apt: name=libapache2-mod-php5 state=present
+
+- name: 3. Start Apache
+  service: name=apache2 state=running enabled=yes
+
+- name: 4. Copiar index.php
+  copy: src=index.php dest=/var/www/index.php mode=0664
+
+====================================================================
+name: add repositories
+  apt_repository: repo={{item}} state=present update_cache=yes
+  with_items:
+
+- name: instalación de graphviz
+  state: present
+  state: started
+  enabled: yes
+- name: instalación de aspell
+  state: present
+  state: started
+  enabled: yes
+- name: instalación de php5
+  state: present
+  state: started
+  enabled: yes
+  ===================================================================
+- command: apt-get install git
+  state: present
+  state: start
+  ===================================================================
+- command: apt-add-repository ppa:rquillo/ansible
+  command: git clone git://git.moodle.org/moodle.git
+  command: cd moodle
+  command: git branch --track MOODLE_31_STABLE origin/MOODLE_31_STABLE
+   
+
+
+
+
+
+
+
+
+

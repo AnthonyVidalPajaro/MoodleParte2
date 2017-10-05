@@ -1,0 +1,6 @@
+---
+hotst: /Users/labsoftware04/Desktop/ansible002/data/redis/tasks/main.yml
+sudo: yes
+gather_factos: no
+tasks
+-

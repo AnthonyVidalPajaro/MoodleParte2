@@ -1,0 +1,5 @@
+---
+# tasks file for sqlserver
+sudo: vi /etc/mysql/my.cnf
+command: default_storage_engine = innodb
+command: service mysql restart
